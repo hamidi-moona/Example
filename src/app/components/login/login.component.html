@@ -1,0 +1,36 @@
+<div class="card formLogin">
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <span style="color:red;" *ngIf="name && name.invalid && name.touched">
+      This input Invalid
+    </span>
+    <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          
+          <input type="text" class="form-control" #User value="loginForm.name" placeholder="Name" formControlName="name">
+    </div>
+  <br>
+
+  <span style="color:red;" *ngIf="password && password.invalid && password.touched">
+    This password Invalid
+  </span>
+    <div class="input-group mb-3">
+      
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fa fa-lock"></i>
+        </span>
+      </div>
+      <input class="form-control" type="password" value="loginForm.password" #Password placeholder="Password" formControlName="password">
+    </div>
+  
+
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+
+
+</div>

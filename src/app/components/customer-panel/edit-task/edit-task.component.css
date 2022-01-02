@@ -1,0 +1,20 @@
+.edit-page
+{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    padding: 5rem ;
+}
+
+.upadteTitle
+{
+    text-align: center;
+    font-size: 28px;
+    margin: 2rem 0px;
+}
+
+.btn-back
+{
+    width: 100px !important;
+    margin: 0px 5px;
+}

@@ -1,0 +1,89 @@
+<div class="main-customer-panel">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+
+    <div class="center-panel">
+        <app-sidebar></app-sidebar>
+
+        <div class="content">
+                <h2 >Task Managment</h2>
+
+                <a  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New Task</a>
+                <div class="container showDataTable">
+          
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Title Task</th>
+                        <th>Description Task</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bodyTable">
+                    <tr *ngFor="let item of Tasks">
+                        <td>{{ item.id }}</td>
+
+                        <td>{{ item.title }}</td>
+
+                        <td>{{ item.body }}</td>
+
+                        <td class="btn-row">
+                            <button type="button"  class="btn btn-info" [routerLink]="['/task/',item.id,'edit']" >
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger"  (click)="deletePost(item.id)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Task</h4>
+          <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+
+                    <input formControlName="title" id="title"
+                           type="text"  class="form-control" >
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="body">Description: </label>
+
+                    <textarea formControlName="body" id="body"
+                           type="text"  class="form-control"></textarea>
+                    
+                </div>
+
+                <button class="btn btn-primary" type="submit"  id="closeModal"
+                 [disabled]="!form.valid" (click)="CreateTask()">Submit</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

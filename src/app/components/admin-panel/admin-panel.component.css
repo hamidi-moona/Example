@@ -1,0 +1,28 @@
+.Admin-panel
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar
+{
+    height: 640px;
+}
+
+.title
+{
+    font-size: 22px;
+    color: royalblue;
+    padding: 10px;
+    margin: 5px 0px;
+}
+.content
+{
+    width: 90%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: right;
+}
+

@@ -1,0 +1,53 @@
+.main-customer-panel
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 630px;
+    overflow: hidden !important;
+}
+
+.center-panel
+{
+    display: flex;
+    flex-direction: row;
+    overflow:hidden !important;
+    text-align: right !important;
+    margin: 2rem;
+}
+
+
+
+.header 
+{
+    height: 80px;
+    border-bottom: 1px solid rgb(194, 183, 183);
+}
+
+.footer
+{
+    height: 80px;
+    border-top: 1px solid rgb(194, 183, 183);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+table{
+    height:350px;
+    display:block;
+    overflow-y:scroll;
+    margin-top: 2rem;
+    margin-bottom: 20rem;
+    text-align: left;
+}
+
+.btn-row
+{
+    display: flex;
+    flex-direction: row;
+}
+.btn-row button
+{
+    margin-right: 5px;
+}
